@@ -16,8 +16,5 @@ end
 describe file('/etc/nginx/sites-enabled/porcupo') do
   it { should be_file }
   its(:content) { should match /server_name porcupo.net \*\.porcupo.net localhost/ }
-end
-
-describe host('porcupo.net') do
-  it { should be_resolvable }
+  its(:content) { should match /root \/home\/djo\/www\/porcupo.net/ }
 end
